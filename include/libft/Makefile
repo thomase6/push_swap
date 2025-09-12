@@ -5,74 +5,86 @@
 #                                                     +:+ +:+         +:+      #
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/10 07:40:09 by texenber          #+#    #+#              #
-#    Updated: 2025/09/11 14:33:43 by texenber         ###   ########.fr        #
+#    Created: 2025/05/16 14:29:16 by texenber          #+#    #+#              #
+#    Updated: 2025/09/11 09:45:53 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := push_swap
+NAME := libft.a
 
 #ingredients
 SRC_DIR := src
 OBJ_DIR := obj
 SRCS := \
-	main.c \
-	utils.c \
-	error_exit.c
+	ft_atof.c \
+	ft_atoi.c \
+	ft_bzero.c \
+	ft_calloc.c \
+	ft_is_space.c \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memset.c \
+	ft_strchr.c \
+	ft_strdup.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strncmp.c \
+	ft_strnstr.c \
+	ft_strrchr.c \
+	ft_tolower.c \
+	ft_toupper.c \
+	ft_itoa.c \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+	ft_putstr_fd.c \
+	ft_striteri.c \
+	ft_strjoin.c \
+	ft_strmapi.c \
+	ft_substr.c \
+	ft_strtrim.c \
+	ft_split.c
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-LIBFT_DIR := include/libft
-LIBFT_LIB := $(LIBFT_DIR)/libft.a
-
-PRINTF_DIR := include/ft_printf
-PRINTF_LIB := $(PRINTF_DIR)/libftprintf.a
-
 CC := cc
-CFLAGS := #-Wall -Werror -Wextra
-CFLAGS += -I$(LIBFT_DIR) -I$(PRINTF_DIR)
+CFLAGS := -Wall -Wextra -Werror
 
 #utensils
-RM := rm -f 
-LM := make -C 
+RM := rm -f
+LM := make -C
 MAKEFLAGS += --no-print-directory
 DIR_DUP = mkdir -p $(@D)
 
 #recipe
-all: $(LIBFT_LIB) $(PRINTF_LIB) $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -L$(LIBFT_DIR) -lft -L$(PRINTF_DIR) -lftprintf -o $@
-	$(info CREATED $(NAME))
-
-$(LIBFT_LIB):
-	$(LM) $(LIBFT_DIR)
-
-$(PRINTF_LIB):
-	$(LM) $(PRINTF_DIR)
-
+	ar rcs $@ $(OBJS)
+	
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(DIR_DUP)
 	$(CC) $(CFLAGS) -c -o $@ $<
-	$(info CREATED $@)
 
 clean:
 	$(RM) $(OBJS)
-	$(LM) $(LIBFT_DIR) clean
-	$(LM) $(PRINTF_DIR) clean
-	$(info sweep sweep)
-
+	
 fclean: clean
 	$(RM) $(NAME)
-	$(LM) $(LIBFT_DIR) fclean
-	$(LM) $(PRINTF_DIR) fclean
 	rm -r $(OBJ_DIR)
-	$(info SWEEP SWEEP)
-
+	
 re:
 	$(MAKE) fclean
 	$(MAKE) all
-
+	
 #special
 .PHONY: clean fclean re
 .SILENT:
