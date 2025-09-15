@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/12 10:33:27 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/15 14:25:41 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,28 @@
 
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**split_args;
+	t_stack_node	*a;
+	t_stack_node	*b;
+	char			**split_args;
 
 	b = NULL;
 	a = NULL;
-	if (ac < 2 || ac == 2 && !av[1][0])
+	if (ac == 1 || ac == 2 && !av[1][0])
 		return (1);
 	else if (ac > 1)
 	{
 		split_args = join_and_split(ac, av);
+		init_stack(&a, split_args);
+		sa(a);
+		while (a)
+		{
+			printf("%d\n", a->nb);
+			a = a->next;
+		}
+		// is the stack sorted?
+			//check how many elements we have
+				//sort 2 and 3
+				//use sorting algorith for >4 
 	}
 	return (0);
 }

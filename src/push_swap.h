@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/12 10:43:18 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/15 14:02:33 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,26 @@
 # include "../include/ft_printf/libftprintf.h"
 # include <stdio.h>
 
-typedef struct s_stack
+typedef struct s_stack_node
 {
-	int		*data;
-	int		index;
-	int		size;
-	int		capacity;
-	int		cost;
-	bool	above_m;
-	bool	cheapest;
-}	t_stack;
+	int					nb;
+	int					index;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+}	t_stack_node;
 
 // *** Parsing Functions ***
-char	**join_and_split(int ac, char **av);
+char			**join_and_split(int ac, char **av);
+void			init_stack(t_stack_node **a, char **split_args);
 
 // *** error handling ***
-void	ft_error_exit(int i);
-void	ft_free_args(char **split_args);
+void			ft_error_exit(int i);
+void			ft_free_args(char **split_args);
+
+// *** stack utils ***
+t_stack_node	*find_end(t_stack_node *stack);
+
+// *** command operations ***
+void	sa(t_stack_node *a);
 
 #endif //PUSH_SWAP_H
