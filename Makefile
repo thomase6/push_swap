@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/10 07:40:09 by texenber          #+#    #+#              #
-#    Updated: 2025/09/15 14:09:51 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/16 21:13:05 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS := \
 	parsing.c \
 	stack_utils.c \
 	swap.c \
+	push.c	\
 	error_exit.c
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/15 13:49:20 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/16 17:56:39 by texenber         ###   ########.fr       */
+/*   Created: 2025/09/16 17:56:12 by texenber          #+#    #+#             */
+/*   Updated: 2025/09/16 21:36:33 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack_node *stack)
-{	
-	int	tmp;
-	if (!stack || !stack->next)
+static void    push(t_stack_node **src, t_stack_node **dst)
+{
+	t_stack_node	*tmp;
+
+	if (!*src)
 		return;
-	tmp = stack->nb;
-	stack->nb = stack->next->nb;
-	stack->next->nb = tmp;
+	tmp = *src;
+	*src = (*src)->next;
+	if(*src)
+		(*src)->prev = NULL;
+	tmp->next = *dst;
+	if (*dst)
+		(*dst)->prev = tmp;
+	tmp->prev = NULL;
+	*dst = tmp;
 }
 
-void	sa(t_stack_node *a)
+void	pa(t_stack_node **a, t_stack_node **b)
 {
-	swap(a);
-	ft_printf("sa\n");
+	push(b, a);
+	ft_printf("pa\n");
 }
-
-void	sb(t_stack_node *b)
+void	pb(t_stack_node **a, t_stack_node **b)
 {
-	swap(b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack_node *a, t_stack_node *b)
-{
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	push(a, b);
+	ft_printf("pb\n");
 }
