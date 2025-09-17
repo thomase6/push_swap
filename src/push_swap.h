@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/16 21:02:10 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:17:38 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,11 @@ void	sb(t_stack_node *b);
 void	ss(t_stack_node *a, t_stack_node *b);
 void	pa(t_stack_node **a, t_stack_node **b);
 void	pb(t_stack_node **a, t_stack_node **b);
+void	ra(t_stack_node **a);
+void	rb(t_stack_node **b);
+void	rr(t_stack_node **a, t_stack_node **b);
+void	rra(t_stack_node **a);
+void	rrb(t_stack_node **b);
+void	rrr(t_stack_node **a, t_stack_node **b);
 
 #endif //PUSH_SWAP_H

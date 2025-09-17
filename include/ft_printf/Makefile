@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/03 10:42:43 by texenber          #+#    #+#              #
-#    Updated: 2025/09/16 21:06:13 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/17 08:38:10 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS1 = ft_printf.c\
 NAME = libftprintf.a
 LIBC = ar rcs
 CC = cc
-CFLAGS =# -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 OBJS = $(SRCS1:.c=.o)
 
