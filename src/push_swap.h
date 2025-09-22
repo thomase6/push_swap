@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/17 10:17:38 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:34:29 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void			ft_free_args(char **split_args);
 
 // *** stack utils ***
 t_stack_node	*find_end(t_stack_node *stack);
+int				stack_len(t_stack_node *stack);
+bool			is_sorted(t_stack_node *stack);
 
 // *** command operations ***
 void	sa(t_stack_node *a);
@@ -58,5 +60,8 @@ void	rr(t_stack_node **a, t_stack_node **b);
 void	rra(t_stack_node **a);
 void	rrb(t_stack_node **b);
 void	rrr(t_stack_node **a, t_stack_node **b);
+
+// *** sort three ***
+void	sort_three(t_stack_node **stack);
 
 #endif //PUSH_SWAP_H

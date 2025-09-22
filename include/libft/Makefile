@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 14:29:16 by texenber          #+#    #+#              #
-#    Updated: 2025/09/11 09:45:53 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/22 10:40:00 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ clean:
 	
 fclean: clean
 	$(RM) $(NAME)
-	rm -r $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 	
 re:
 	$(MAKE) fclean

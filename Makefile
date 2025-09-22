@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/10 07:40:09 by texenber          #+#    #+#              #
-#    Updated: 2025/09/17 10:17:55 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/22 13:07:51 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS :=	\
 	push.c	\
 	rotate.c	\
 	rev_rotate.c	\
+	sort_three.c	\
 	error_exit.c
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
@@ -35,7 +36,7 @@ PRINTF_DIR := include/ft_printf
 PRINTF_LIB := $(PRINTF_DIR)/libftprintf.a
 
 CC := cc
-CFLAGS := #-Wall -Werror -Wextra
+CFLAGS := -g #-Wall -Werror -Wextra
 CFLAGS += -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 #utensils
@@ -72,7 +73,7 @@ fclean: clean
 	$(RM) $(NAME)
 	$(LM) $(LIBFT_DIR) fclean
 	$(LM) $(PRINTF_DIR) fclean
-	rm -r $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 	$(info SWEEP SWEEP)
 
 re:

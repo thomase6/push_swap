@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/17 10:18:07 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:38:04 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,34 @@ int	main(int ac, char **av)
 	t_stack_node	*b;
 	char			**split_args;
 	t_stack_node	*tmp;
+	int				a_count;
 
 	b = NULL;
 	a = NULL;
-	if (ac == 1 || ac == 2 && !av[1][0])
+	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
 	else if (ac > 1)
 	{
 		split_args = join_and_split(ac, av);
 		init_stack(&a, split_args);
-        rra(&a);
-        tmp = a;
-        while (tmp)
-        {
-            ft_printf("%d\n", tmp->nb);
-            tmp = tmp->next;
-        }
-		// is the stack sorted?
-			//check how many elements we have
-				//sort 2 and 3
-				//use sorting algorith for >4 
+		if (!is_sorted(a))
+		{
+			a_count = stack_len(a);
+			if (a_count == 2)
+				sa(a);
+			else if (a_count == 3)
+			{
+				ft_printf("stack count is 3\n");
+				sort_three(&a);
+			}
+			else if (a_count > 3)
+				ft_printf("stack count is greater than 4\n");
+		}
+		while (a)//this is just for testing make sure to remove
+		{
+			ft_printf("%d\n", a->nb);
+			a = a->next;
+		}
 	}
 	return (0);
 }
