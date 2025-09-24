@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/22 13:38:04 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/24 08:50:57 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	main(int ac, char **av)
 {
+	if (ac == 1 || (ac == 2 && !av[1][0]))
+		return (1);
+	
 	t_stack_node	*a;
 	t_stack_node	*b;
 	char			**split_args;
@@ -39,7 +42,10 @@ int	main(int ac, char **av)
 				sort_three(&a);
 			}
 			else if (a_count > 3)
+			{
 				ft_printf("stack count is greater than 4\n");
+				sort_all(&a, &b);
+			}	
 		}
 		while (a)//this is just for testing make sure to remove
 		{
@@ -47,6 +53,7 @@ int	main(int ac, char **av)
 			a = a->next;
 		}
 	}
+	ft_free_args(split_args);//make sure to also free stack
 	return (0);
 }
 // int main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/22 13:34:29 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/24 11:34:45 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 typedef struct s_stack_node
 {
 	int					nb;
-	int					index;
+	int					cheapest;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;
@@ -49,19 +49,25 @@ int				stack_len(t_stack_node *stack);
 bool			is_sorted(t_stack_node *stack);
 
 // *** command operations ***
-void	sa(t_stack_node *a);
-void	sb(t_stack_node *b);
-void	ss(t_stack_node *a, t_stack_node *b);
-void	pa(t_stack_node **a, t_stack_node **b);
-void	pb(t_stack_node **a, t_stack_node **b);
-void	ra(t_stack_node **a);
-void	rb(t_stack_node **b);
-void	rr(t_stack_node **a, t_stack_node **b);
-void	rra(t_stack_node **a);
-void	rrb(t_stack_node **b);
-void	rrr(t_stack_node **a, t_stack_node **b);
+void			sa(t_stack_node *a);
+void			sb(t_stack_node *b);
+void			ss(t_stack_node *a, t_stack_node *b);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **a, t_stack_node **b);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 // *** sort three ***
-void	sort_three(t_stack_node **stack);
+void			sort_three(t_stack_node **stack);
+
+// *** sort more than 3  and sort utils***
+void			sort_all(t_stack_node **a, t_stack_node **b);
+int				calculate_a_cost(t_stack_node *a, t_stack_node *current);
+int				calculate_b_cost(t_stack_node *b, t_stack_node *current);
+t_stack_node	*find_target_in_b(t_stack_node *b, t_stack_node *current);
 
 #endif //PUSH_SWAP_H

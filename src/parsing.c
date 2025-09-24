@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 08:22:29 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/22 08:42:28 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/23 08:45:11 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,4 @@ void	init_stack(t_stack_node **a, char **split_args)
 		add_node(a, (int)n);
 		i++;
 	}
-	
 }
