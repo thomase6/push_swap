@@ -6,39 +6,26 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 09:51:15 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/24 11:52:28 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/25 09:29:46 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*find_target_in_b(t_stack_node *b, t_stack_node *current)
+void assign_index(t_stack_node *stack)
 {
-	t_stack_node	*target;
-	t_stack_node	*tmp;
-	int	min;
-	int max;
-	
-	target = NULL;
-	tmp = b;
-	min = 0;
-	max = 0;
+	int	i;
 
-	while(tmp)
+	i = 0;
+	while(stack)
 	{
-		if (tmp->nb > current->nb)
-		{
-			min = tmp->nb;
-			target = tmp;
-		}
-		if (tmp->nb < current->nb)
-		{
-			
-		}
+		stack->index = i;
+		i++;
+		stack = stack->next;
 	}
-	
-	if 
 }
+int	assign_target_index(t_stack_node *a, t_stack_node *b)
+{
 	
 }
 
@@ -68,7 +55,10 @@ int	calculate_a_cost(t_stack_node *a, t_stack_node *current)
 
 int	calculate_b_cost(t_stack_node *b, t_stack_node *current)
 {
-	t_stack_node *target;
+	t_stack_node	*target;
+	int				b_cost;
 	
-	target = find_target_in_b(b, current);
+	b_cost = 0;
+	// target = find_target_in_b(b, current);
+	return (b_cost);
 }

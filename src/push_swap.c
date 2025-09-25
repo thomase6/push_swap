@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/24 08:50:57 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/25 09:14:24 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,17 @@ int	main(int ac, char **av)
 				sort_all(&a, &b);
 			}	
 		}
+		ft_printf("Stack A:\n");
 		while (a)//this is just for testing make sure to remove
 		{
-			ft_printf("%d\n", a->nb);
+			ft_printf("%d. %d\n", a->index, a->nb);
 			a = a->next;
+		}
+		ft_printf("Stack B:\n");
+		while (b)//this is just for testing make sure to remove
+		{
+			ft_printf("%d. %d\n", b->index, b->nb);
+			b = b->next;
 		}
 	}
 	ft_free_args(split_args);//make sure to also free stack
