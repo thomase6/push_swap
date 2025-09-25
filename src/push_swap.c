@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/25 09:14:24 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/25 13:25:33 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 	t_stack_node	*a;
 	t_stack_node	*b;
 	char			**split_args;
-	t_stack_node	*tmp;
 	int				a_count;
 
 	b = NULL;
@@ -56,7 +55,7 @@ int	main(int ac, char **av)
 		ft_printf("Stack B:\n");
 		while (b)//this is just for testing make sure to remove
 		{
-			ft_printf("%d. %d\n", b->index, b->nb);
+			ft_printf("%d. %d target_index = %d\n", b->index, b->nb, b->target_index);
 			b = b->next;
 		}
 	}

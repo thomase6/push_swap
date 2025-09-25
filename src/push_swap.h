@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/25 09:29:20 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/25 11:41:18 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void			sort_all(t_stack_node **a, t_stack_node **b);
 int				calculate_a_cost(t_stack_node *a, t_stack_node *current);
 int				calculate_b_cost(t_stack_node *b, t_stack_node *current);
 void			assign_index(t_stack_node *stack);
+int				assign_target_index(t_stack_node *a, t_stack_node *b);
 
 #endif //PUSH_SWAP_H
