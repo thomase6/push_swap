@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 09:53:39 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/14 08:37:23 by texenber         ###   ########.fr       */
+/*   Created: 2025/09/26 10:04:57 by texenber          #+#    #+#             */
+/*   Updated: 2025/09/26 10:09:37 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_abs(int n)
 {
-	int		i;
-	char	**split_args;
-
-	i = 0;
-	if (ac < 2 || ac == 2 && !av[1][0])
-		return (1);
-	else if (ac > 1)
-	{
-		split_args = join_and_split(ac, av);
-	}
-	while (split_args[i])
-	{
-		ft_printf("%s\n", split_args[i]);
-		free(split_args[i]);
-		i++;
-	}
-	free (split_args);
-	return (0);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

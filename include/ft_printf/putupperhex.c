@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   putupperhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: texenber <texenber@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 07:25:41 by texenber          #+#    #+#             */
-/*   Updated: 2025/06/10 09:59:23 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/26 09:11:05 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,11 +6,24 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 09:51:15 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/25 13:48:00 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:56:46 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	set_cheapest(t_stack_node *b, t_stack_node *cheapest_node)
+{
+	t_stack_node	*current;
+
+	current = b;
+	while (current)
+	{
+		if (current == cheapest_node)
+			current->cheapest = true;
+		current = current->next;
+	}
+}
 
 void assign_index(t_stack_node *stack)
 {
@@ -71,38 +84,4 @@ int	assign_target_index(t_stack_node *a, t_stack_node *b)
 	if (target_index == -1)
 		target_index = find_smallest_index(a);
 	return (target_index);
-}
-
-int	calculate_a_cost(t_stack_node *a, t_stack_node *current)
-{
-	int	a_len;
-	int	current_pos;
-	int	a_cost;
-	t_stack_node	*tmp; 
-	
-	tmp = a;
-	current_pos = 0;
-	a_len = stack_len(a);
-	while (tmp)
-	{
-		if (tmp->nb == current->nb)
-			break;
-		current_pos++;
-		tmp = tmp->next;
-	}
-	if (current_pos <= a_len / 2)
-		a_cost = current_pos;
-	else if (current_pos > a_len / 2)
-		a_cost = a_len - current_pos;
-	return (a_cost);
-}
-
-int	calculate_b_cost(t_stack_node *b, t_stack_node *current)
-{
-	t_stack_node	*target;
-	int				b_cost;
-	
-	b_cost = 0;
-	// target = find_target_in_b(b, current);
-	return (b_cost);
 }

@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 13:30:15 by texenber          #+#    #+#             */
-/*   Updated: 2025/08/31 11:09:45 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/26 10:08:55 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+int		ft_abs(int n);
 double	ft_atof(char *str);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

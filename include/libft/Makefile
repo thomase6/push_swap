@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 14:29:16 by texenber          #+#    #+#              #
-#    Updated: 2025/09/22 10:40:00 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/26 10:09:01 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ NAME := libft.a
 SRC_DIR := src
 OBJ_DIR := obj
 SRCS := \
+	ft_abs.c \
 	ft_atof.c \
 	ft_atoi.c \
 	ft_bzero.c \

@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/25 11:41:18 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:56:55 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack_node
 	int					nb;
 	int					index;
 	int					target_index;
-	int					cheapest;
+	bool				cheapest;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;
@@ -68,9 +68,8 @@ void			sort_three(t_stack_node **stack);
 
 // *** sort more than 3  and sort utils***
 void			sort_all(t_stack_node **a, t_stack_node **b);
-int				calculate_a_cost(t_stack_node *a, t_stack_node *current);
-int				calculate_b_cost(t_stack_node *b, t_stack_node *current);
 void			assign_index(t_stack_node *stack);
 int				assign_target_index(t_stack_node *a, t_stack_node *b);
+void			set_cheapest(t_stack_node *b, t_stack_node *cheapest_node);
 
 #endif //PUSH_SWAP_H

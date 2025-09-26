@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   putlowerhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: texenber <texenber@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 07:27:42 by texenber          #+#    #+#             */
-/*   Updated: 2025/06/10 10:01:09 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/26 09:20:28 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
