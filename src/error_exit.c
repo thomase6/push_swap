@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:30 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/12 10:43:30 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:11:52 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	ft_error_exit(int i)
 		ft_printf(M_ERROR);
 	else if (i == ERR_INPUT)
 		ft_printf(I_ERROR);
+	else if (i == ERR_CHEAP)
+		ft_printf(CHEAP_ERROR);
 	else
 		ft_printf(U_ERROR);
 	exit(EXIT_FAILURE);

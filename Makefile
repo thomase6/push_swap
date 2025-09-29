@@ -6,7 +6,7 @@
 #    By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/10 07:40:09 by texenber          #+#    #+#              #
-#    Updated: 2025/09/24 10:45:09 by texenber         ###   ########.fr        #
+#    Updated: 2025/09/29 16:12:38 by texenber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS :=	\
 	sort_three.c	\
 	sort_all.c	\
 	sort_utils.c	\
+	exec_move.c	\
 	error_exit.c
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

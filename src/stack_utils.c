@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:52:47 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/23 12:27:55 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:53:40 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,33 @@ bool	is_sorted(t_stack_node *stack)
 		stack = stack->next;
 	}
 	return true;
+}
+
+t_stack_node	*get_cheapest_node(t_stack_node *b)
+{
+	t_stack_node	*current;
+
+	current = b;
+	while(current)
+	{
+		if(current->cheapest)
+			return current;
+		current = current->next;
+	}
+	return NULL;
+}
+
+t_stack_node	*find_min_node(t_stack_node *a)
+{
+	t_stack_node	*min_node;
+
+	min_node = a;
+	while(a)
+	{
+		if (a->nb < min_node->nb)
+			min_node = a;
+		a = a->next;
+	}
+	return(min_node);
 }
 

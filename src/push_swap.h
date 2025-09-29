@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/26 13:56:55 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:43:02 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # define ERR_MEMORY 1
 # define ERR_DUPLICATE 2
 # define ERR_INPUT 3
+# define ERR_CHEAP 4
 # define M_ERROR "Error: Memory allocation failed\n"
 # define I_ERROR "Error: Invalid input\n"
 # define U_ERROR "Error: Wrong error identifier\n"
+# define CHEAP_ERROR "Error: Issues grabing the cheapest number\n"
 
 # include <stdbool.h>
 # include <limits.h>
@@ -32,6 +34,8 @@ typedef struct s_stack_node
 	int					nb;
 	int					index;
 	int					target_index;
+	int					a_cost;
+	int					b_cost;
 	bool				cheapest;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
@@ -49,6 +53,8 @@ void			ft_free_args(char **split_args);
 t_stack_node	*find_end(t_stack_node *stack);
 int				stack_len(t_stack_node *stack);
 bool			is_sorted(t_stack_node *stack);
+t_stack_node	*get_cheapest_node(t_stack_node *b);
+void			final_rotate(t_stack_node **a);
 
 // *** command operations ***
 void			sa(t_stack_node *a);
@@ -71,5 +77,9 @@ void			sort_all(t_stack_node **a, t_stack_node **b);
 void			assign_index(t_stack_node *stack);
 int				assign_target_index(t_stack_node *a, t_stack_node *b);
 void			set_cheapest(t_stack_node *b, t_stack_node *cheapest_node);
+t_stack_node	*find_min_node(t_stack_node *a);
+
+// *** execute moves ***
+void			exec_move(t_stack_node **a, t_stack_node **b);
 
 #endif //PUSH_SWAP_H

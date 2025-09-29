@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 09:51:15 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/26 13:56:46 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/29 16:54:38 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,27 @@ int	assign_target_index(t_stack_node *a, t_stack_node *b)
 	if (target_index == -1)
 		target_index = find_smallest_index(a);
 	return (target_index);
+}
+
+void	final_rotate(t_stack_node **a)
+{
+	t_stack_node	*min_node;
+	int				i;
+	int				stack_size;
+	
+	assign_index(*a);
+	min_node = find_min_node(*a);
+	stack_size = stack_len(*a);
+	i = min_node->index;
+	if (i <= stack_size / 2)
+	{
+		while (i--)
+			ra(a);
+	}
+	else 
+	{
+		i = stack_size - i;
+		while (i--)
+			rra(a);
+	}
 }
