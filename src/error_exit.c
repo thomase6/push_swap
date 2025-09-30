@@ -6,11 +6,26 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:30 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:11:52 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 09:26:43 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_free_stack(t_stack_node **stack)
+{
+	t_stack_node	*tmp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->nb = 0;
+		free(*stack);
+		*stack = tmp;
+	}
+}
 
 void	ft_free_args(char **split_args)
 {

@@ -6,13 +6,14 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:32:58 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:11:48 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 09:27:33 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rev_or_rotate(t_stack_node	**a, t_stack_node **b, t_stack_node *cheapest)
+static void	rev_or_rotate(t_stack_node **a, t_stack_node **b,
+t_stack_node *cheapest)
 {
 	if (cheapest->a_cost < 0)
 	{
@@ -58,7 +59,7 @@ void	exec_move(t_stack_node **a, t_stack_node **b)
 			cheapest->b_cost++;
 		}
 		else
-			break;
+			break ;
 	}
 	while (cheapest->a_cost != 0 || cheapest->b_cost != 0)
 		rev_or_rotate(a, b, cheapest);

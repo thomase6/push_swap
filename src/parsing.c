@@ -6,21 +6,21 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 08:22:29 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/23 08:45:11 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:02:42 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static bool is_duplicate(t_stack_node *a, int n)
+static bool	is_duplicate(t_stack_node *a, int n)
 {
 	while (a)
 	{
 		if (a->nb == n)
-			return true;
+			return (true);
 		a = a->next;
 	}
-	return false;
+	return (false);
 }
 
 static long	ft_atol(const char *str)
@@ -28,7 +28,7 @@ static long	ft_atol(const char *str)
 	int		i;
 	long	sum;
 	int		sign;
-	
+
 	i = 0;
 	sum = 0;
 	sign = 1;
@@ -48,35 +48,29 @@ static long	ft_atol(const char *str)
 
 static bool	is_valid_int(const char *str)
 {
-	int		i;
-	long	val;
+	int	i;
 
 	i = 0;
-	if (str[i] == '+' || str[i] == '-')
+	if ((str[i] == '+' || str[i] == '-'))
 		i++;
-	if(!ft_isdigit(str[i]))
-		return false;
-	if (str[i] == '0' && str[i + 1] != '\0')
-		return false;
 	while (str[i])
 	{
-		if(!ft_isdigit(str[i]))
-			return false;
+		if (!ft_isdigit(str[i]))
+			return (false);
 		i++;
 	}
-	if (ft_strlen(str) > 11)
-		return false;
-	return true;
+	return (true);
 }
-static void add_node(t_stack_node **stack, int n)
+
+static void	add_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*current;
 	t_stack_node	*end_node;
-	
+
 	if (!stack)
-		return;
+		return ;
 	current = malloc(sizeof(t_stack_node));
-	if(!current)
+	if (!current)
 		ft_error_exit(1);
 	current->next = NULL;
 	current->nb = n;
@@ -85,7 +79,7 @@ static void add_node(t_stack_node **stack, int n)
 		*stack = current;
 		current->prev = NULL;
 	}
-	else	
+	else
 	{
 		end_node = find_end(*stack);
 		end_node->next = current;
@@ -95,13 +89,13 @@ static void add_node(t_stack_node **stack, int n)
 
 void	init_stack(t_stack_node **a, char **split_args)
 {
-	int	i;
-	long n;
+	int		i;
+	long	n;
 
 	i = 0;
 	while (split_args[i])
 	{
-		if (!is_valid_int(split_args[i]))
+		if (!is_valid_int(split_args[i]) || !too_many_0(split_args[i]))
 		{
 			ft_free_args(split_args);//gotta free the stack too
 			ft_error_exit(3);// find a different way to handle errors

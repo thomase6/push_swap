@@ -6,11 +6,23 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 10:07:58 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/11 15:43:22 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 14:49:25 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+bool	too_many_0(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i] == '0')
+		i++;
+	if (ft_strlen(&str[i]) > 11)
+		return (false);
+	return (true);
+}
 
 static char	*ps_strjoin(const char *s1, const char *s2)
 {

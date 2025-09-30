@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:43:02 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:10:50 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ typedef struct s_stack_node
 // *** Parsing Functions ***
 char			**join_and_split(int ac, char **av);
 void			init_stack(t_stack_node **a, char **split_args);
+bool			too_many_0(const char *str);
 
 // *** error handling ***
 void			ft_error_exit(int i);
 void			ft_free_args(char **split_args);
+void			ft_free_stack(t_stack_node **stack);
 
 // *** stack utils ***
 t_stack_node	*find_end(t_stack_node *stack);

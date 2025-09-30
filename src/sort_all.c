@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 09:47:21 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:11:35 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 09:38:47 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	find_a_cost(t_stack_node *a, t_stack_node *current)
 {
 	int	a_cost;
-	
+
 	if (current->target_index <= stack_len(a) / 2)
 		a_cost = current->target_index;
 	else
@@ -30,7 +30,7 @@ static int	find_b_cost(t_stack_node *b, t_stack_node *current)
 	if (current->index <= stack_len(b) / 2)
 		b_cost = current->index;
 	else
-		b_cost = current->index - stack_len(b) ;
+		b_cost = current->index - stack_len(b);
 	return (b_cost);
 }
 
@@ -48,11 +48,13 @@ static void	find_cheapest(t_stack_node *a, t_stack_node *b)
 		current->cheapest = false;
 		current->a_cost = find_a_cost(a, current);
 		current->b_cost = find_b_cost(b, current);
-		if (((ft_abs(current->a_cost)) + (ft_abs(current->b_cost))) < lowest_cost)
+		if (((ft_abs(current->a_cost)) + (ft_abs(current->b_cost)))
+			< lowest_cost)
 		{
-			lowest_cost = ((ft_abs(current->a_cost)) + (ft_abs(current->b_cost)));
+			lowest_cost = ((ft_abs(current->a_cost))
+					+ (ft_abs(current->b_cost)));
 			cheapest_node = current;
-		}	
+		}
 		current = current->next;
 	}
 	set_cheapest(b, cheapest_node);
@@ -70,10 +72,10 @@ static void	assign_all_targets(t_stack_node *a, t_stack_node *b)
 void	sort_all(t_stack_node **a, t_stack_node **b)
 {
 	while (stack_len(*a) > 3)
-		pb(a, b);	
+		pb(a, b);
 	if (!is_sorted(*a))
 		sort_three(a);
-	while(*b)
+	while (*b)
 	{
 		assign_index(*a);
 		assign_index(*b);
@@ -81,5 +83,5 @@ void	sort_all(t_stack_node **a, t_stack_node **b)
 		find_cheapest(*a, *b);
 		exec_move(a, b);
 	}
-	final_rotate(a);	
+	final_rotate(a);
 }

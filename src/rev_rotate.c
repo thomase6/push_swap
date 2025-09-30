@@ -6,19 +6,19 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 09:28:49 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/17 10:17:17 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 09:35:37 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rev_rotate(t_stack_node **stack)
+static void	rev_rotate(t_stack_node **stack)
 {
 	t_stack_node	*end;
 	t_stack_node	*new_end;
 
-	if(!*stack || !(*stack)->next)
-		return;
+	if (!*stack || !(*stack)->next)
+		return ;
 	end = find_end(*stack);
 	new_end = end->prev;
 	new_end->next = NULL;

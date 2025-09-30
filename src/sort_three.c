@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:12:05 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/22 13:54:41 by texenber         ###   ########.fr       */
+/*   Updated: 2025/09/30 09:38:55 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort_three(t_stack_node **stack)
 	else if (first->nb < second->nb && first->nb > third->nb)
 		rra(stack);
 	else if (first->nb > second->nb && first->nb > third->nb
-			&& second->nb < third->nb)
+		&& second->nb < third->nb)
 		ra(stack);	
 	else if (first->nb > second->nb && second->nb > third->nb)
 	{
