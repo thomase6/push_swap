@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 08:22:29 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 15:02:42 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:20:59 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ static void	add_node(t_stack_node **stack, int n)
 		return ;
 	current = malloc(sizeof(t_stack_node));
 	if (!current)
-		ft_error_exit(1);
+	{
+		ft_free_stack(stack);
+		ft_error_exit();
+	}
 	current->next = NULL;
 	current->nb = n;
 	if (!(*stack))
@@ -97,19 +100,19 @@ void	init_stack(t_stack_node **a, char **split_args)
 	{
 		if (!is_valid_int(split_args[i]) || !too_many_0(split_args[i]))
 		{
-			ft_free_args(split_args);//gotta free the stack too
-			ft_error_exit(3);// find a different way to handle errors
+			ft_free_args(split_args, a);
+			ft_error_exit();
 		}
 		n = ft_atol(split_args[i]);
 		if (n < INT_MIN || n > INT_MAX)
 		{
-			ft_free_args(split_args);//gotta free the stack too
-			ft_error_exit(3);// find a different way to handle errors
+			ft_free_args(split_args, a);
+			ft_error_exit();
 		}
 		if (is_duplicate(*a, (int)n))
 		{
-			ft_free_args(split_args); //gotta free the stack too
-			ft_error_exit(3);// find a different way to handle errors
+			ft_free_args(split_args, a);
+			ft_error_exit();
 		}
 		add_node(a, (int)n);
 		i++;

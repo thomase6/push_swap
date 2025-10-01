@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:52:47 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:53:40 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 10:58:19 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ int	stack_len(t_stack_node *stack)
 
 bool	is_sorted(t_stack_node *stack)
 {
-	if(!stack)
-		return true;
+	if (!stack)
+		return (true);
 	while (stack && stack->next)
 	{
 		if (stack->nb > stack->next->nb)
-			return false;
+			return (false);
 		stack = stack->next;
 	}
-	return true;
+	return (true);
 }
 
 t_stack_node	*get_cheapest_node(t_stack_node *b)
@@ -54,13 +54,13 @@ t_stack_node	*get_cheapest_node(t_stack_node *b)
 	t_stack_node	*current;
 
 	current = b;
-	while(current)
+	while (current)
 	{
-		if(current->cheapest)
-			return current;
+		if (current->cheapest)
+			return (current);
 		current = current->next;
 	}
-	return NULL;
+	return (NULL);
 }
 
 t_stack_node	*find_min_node(t_stack_node *a)
@@ -68,12 +68,11 @@ t_stack_node	*find_min_node(t_stack_node *a)
 	t_stack_node	*min_node;
 
 	min_node = a;
-	while(a)
+	while (a)
 	{
 		if (a->nb < min_node->nb)
 			min_node = a;
 		a = a->next;
 	}
-	return(min_node);
+	return (min_node);
 }
-

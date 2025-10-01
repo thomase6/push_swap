@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 10:07:58 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 14:49:25 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:22:49 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	**join_and_split(int ac, char **av)
 	split_args = ft_split (tmp, ' ');
 	free (tmp);
 	if (!split_args)
-		ft_error_exit(1);
-
+		return (NULL);
 	return (split_args);
 }

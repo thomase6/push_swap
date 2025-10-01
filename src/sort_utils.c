@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 09:51:15 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/29 16:54:38 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:04:44 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,24 @@ void	set_cheapest(t_stack_node *b, t_stack_node *cheapest_node)
 	}
 }
 
-void assign_index(t_stack_node *stack)
+void	assign_index(t_stack_node *stack)
 {
 	int	i;
 
 	i = 0;
-	while(stack)
+	while (stack)
 	{
 		stack->index = i;
 		i++;
 		stack = stack->next;
 	}
 }
+
 static int	find_smallest_index(t_stack_node *stack)
 {
 	int	min;
-	int min_index;
-	
+	int	min_index;
+
 	min_index = -1;
 	min = INT_MAX;
 	while (stack)
@@ -50,7 +51,7 @@ static int	find_smallest_index(t_stack_node *stack)
 		{
 			min_index = stack->index;
 			min = stack->nb;
-		}	
+		}
 		stack = stack->next;
 	}
 	if (min_index == -1)
@@ -67,18 +68,18 @@ int	assign_target_index(t_stack_node *a, t_stack_node *b)
 	t_stack_node	*tmp;
 	int				target_index;
 	int				min;
-	
+
 	head = a;
 	tmp = head;
 	min = INT_MAX;
 	target_index = -1;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->nb > b->nb && (tmp->nb - b->nb) < min)
 		{
 			min = tmp->nb - b->nb;
 			target_index = tmp->index;
-		} 
+		}
 		tmp = tmp->next;
 	}
 	if (target_index == -1)
@@ -91,7 +92,7 @@ void	final_rotate(t_stack_node **a)
 	t_stack_node	*min_node;
 	int				i;
 	int				stack_size;
-	
+
 	assign_index(*a);
 	min_node = find_min_node(*a);
 	stack_size = stack_len(*a);
@@ -101,7 +102,7 @@ void	final_rotate(t_stack_node **a)
 		while (i--)
 			ra(a);
 	}
-	else 
+	else
 	{
 		i = stack_size - i;
 		while (i--)

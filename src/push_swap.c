@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 12:07:58 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 08:47:59 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	main(int ac, char **av)
 	split_args = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
-	// else if (ac > 1)
-	// {
 	split_args = join_and_split(ac, av);
 	init_stack(&a, split_args);
 	if (!is_sorted(a))
@@ -38,8 +36,6 @@ int	main(int ac, char **av)
 		else if (a_count > 3)
 			sort_all(&a, &b);
 	}
-	// }
-	ft_free_args(split_args);
-	ft_free_stack(&a);
+	ft_free_args(split_args, &a);
 	return (0);
 }

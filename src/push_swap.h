@@ -6,22 +6,12 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 15:10:50 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:19:08 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-// *** Error identifiers and error messages ****
-# define ERR_MEMORY 1
-# define ERR_DUPLICATE 2
-# define ERR_INPUT 3
-# define ERR_CHEAP 4
-# define M_ERROR "Error: Memory allocation failed\n"
-# define I_ERROR "Error: Invalid input\n"
-# define U_ERROR "Error: Wrong error identifier\n"
-# define CHEAP_ERROR "Error: Issues grabing the cheapest number\n"
 
 # include <stdbool.h>
 # include <limits.h>
@@ -47,8 +37,8 @@ void			init_stack(t_stack_node **a, char **split_args);
 bool			too_many_0(const char *str);
 
 // *** error handling ***
-void			ft_error_exit(int i);
-void			ft_free_args(char **split_args);
+void			ft_error_exit(void);
+void			ft_free_args(char **split_args, t_stack_node **stack);
 void			ft_free_stack(t_stack_node **stack);
 
 // *** stack utils ***

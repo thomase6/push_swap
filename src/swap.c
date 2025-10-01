@@ -6,17 +6,18 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:49:20 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/24 08:41:59 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:07:04 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	swap(t_stack_node *stack)
-{	
+{
 	int	tmp;
+
 	if (!stack || !stack->next)
-		return;
+		return ;
 	tmp = stack->nb;
 	stack->nb = stack->next->nb;
 	stack->next->nb = tmp;

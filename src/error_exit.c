@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:30 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 09:26:43 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 10:30:41 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_free_stack(t_stack_node **stack)
 	}
 }
 
-void	ft_free_args(char **split_args)
+void	ft_free_args(char **split_args, t_stack_node **stack)
 {
 	int	i;
 
@@ -38,17 +38,12 @@ void	ft_free_args(char **split_args)
 		i++;
 	}
 	free(split_args);
+	if (stack != NULL)
+		ft_free_stack(stack);
 }
 
-void	ft_error_exit(int i)
+void	ft_error_exit(void)
 {
-	if (i == ERR_MEMORY)
-		ft_printf(M_ERROR);
-	else if (i == ERR_INPUT)
-		ft_printf(I_ERROR);
-	else if (i == ERR_CHEAP)
-		ft_printf(CHEAP_ERROR);
-	else
-		ft_printf(U_ERROR);
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }

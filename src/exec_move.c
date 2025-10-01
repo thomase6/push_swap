@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:32:58 by texenber          #+#    #+#             */
-/*   Updated: 2025/09/30 09:27:33 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 08:04:35 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	exec_move(t_stack_node **a, t_stack_node **b)
 
 	cheapest = get_cheapest_node(*b);
 	if (!cheapest)
-		ft_error_exit(4);
+		return ;
 	while (cheapest->a_cost != 0 && cheapest->b_cost != 0)
 	{
 		if (cheapest->a_cost > 0 && cheapest->b_cost > 0)
