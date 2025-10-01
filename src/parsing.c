@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 08:22:29 by texenber          #+#    #+#             */
-/*   Updated: 2025/10/01 09:20:59 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:24:46 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static bool	is_valid_int(const char *str)
 	return (true);
 }
 
-static void	add_node(t_stack_node **stack, int n)
+static void	add_node(t_stack_node **stack, char **split_args, int n)
 {
 	t_stack_node	*current;
 	t_stack_node	*end_node;
@@ -72,7 +72,7 @@ static void	add_node(t_stack_node **stack, int n)
 	current = malloc(sizeof(t_stack_node));
 	if (!current)
 	{
-		ft_free_stack(stack);
+		ft_free_args(split_args, stack);
 		ft_error_exit();
 	}
 	current->next = NULL;
@@ -114,7 +114,7 @@ void	init_stack(t_stack_node **a, char **split_args)
 			ft_free_args(split_args, a);
 			ft_error_exit();
 		}
-		add_node(a, (int)n);
+		add_node(a, split_args, (int)n);
 		i++;
 	}
 }
