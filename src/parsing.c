@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 08:22:29 by texenber          #+#    #+#             */
-/*   Updated: 2025/10/01 14:24:46 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:13:35 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static bool	is_valid_int(const char *str)
 	i = 0;
 	if ((str[i] == '+' || str[i] == '-'))
 		i++;
+	if (!str[i])
+		return (false);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
