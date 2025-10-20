@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:37:33 by texenber          #+#    #+#             */
-/*   Updated: 2025/10/01 14:24:48 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/20 09:30:53 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 		return (1);
 	split_args = join_and_split(ac, av);
 	if (!split_args)
-		return (1);
+		ft_error_exit();
 	init_stack(&a, split_args);
 	if (!is_sorted(a))
 	{
