@@ -6,7 +6,7 @@
 /*   By: texenber <texenber@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 07:36:59 by texenber          #+#    #+#             */
-/*   Updated: 2025/10/01 09:19:08 by texenber         ###   ########.fr       */
+/*   Updated: 2025/10/21 09:19:04 by texenber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <limits.h>
 # include "../include/libft/src/libft.h"
 # include "../include/ft_printf/libftprintf.h"
-# include <stdio.h>
 
 typedef struct s_stack_node
 {
